@@ -10,6 +10,24 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://laogou586.github.io/about/</loc>
+    
+    <lastmod>2025-12-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://laogou586.github.io/projects/</loc>
+    
+    <lastmod>2025-12-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   <url>
     <loc>https://laogou586.github.io/</loc>
