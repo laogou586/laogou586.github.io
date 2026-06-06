@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>我的第一篇测试文章</title>
+    <url>/2025/01/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[你好，世界！这是隔壁老王使用 Hexo + Stellar 主题发布的第一篇测试文章。
+搞机与折腾今天终于把博客的配置问题解决了，去掉了导致报错的中文路径，现在一切运行正常。
+
+
+接下来要做的：
+丰富博客内容
+上传好看的头像和网站图标
+探索 Stellar 主题的更多高级玩法
+
+这是一张测试图片的代码示例（如果想加图片可以把图片放在相对路径下）：
+]]></content>
+      <categories>
+        <category>日常记录</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>
