@@ -1,0 +1,79 @@
+/* ============================================================
+   Stellar 全局排版统一 (laogou586)
+   - 基于 15px 正文,统一标题/正文/标注字号层级
+   - 中文阅读优化(行高、字距)
+   - 侧栏菜单图标静止时更清晰
+   ============================================================ */
+
+/* ---------- 1. 正文:中文阅读优化 ---------- */
+.md-text {
+  line-height: 1.8; /* 主题默认 1.6,中文更舒展 */
+}
+
+/* ---------- 2. 标题层级统一 h1 > h2 > h3 > h4 > h5 > h6 ---------- */
+.md-text h1,
+.md-text h2,
+.md-text h3,
+.md-text h4,
+.md-text h5,
+.md-text h6 {
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--text-p1);
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.md-text h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.md-text h2 {
+  font-size: 1.4rem;
+}
+
+.md-text h3 {
+  font-size: 1.2rem;
+}
+
+.md-text h4 {
+  font-size: 1.05rem;
+}
+
+.md-text h5 {
+  font-size: 1rem;
+}
+
+.md-text h6 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-p2);
+}
+
+/* 内容开头的标题紧贴顶部 */
+.md-text.content > h2:first-child,
+.md-text.content > h3:first-child,
+.md-text.content > h4:first-child {
+  margin-top: 0;
+}
+
+/* ---------- 3. 标注 / 图注 / 脚注 ---------- */
+.md-text .caption,
+.md-text figcaption {
+  font-size: 0.85rem;
+  color: var(--text-p3);
+  text-align: center;
+}
+
+.md-text .footnote {
+  font-size: 0.85rem;
+  color: var(--text-p3);
+}
+
+/* ---------- 4. 菜单图标:静止时更清晰 ---------- */
+.nav-area .menu .nav-item img,
+.nav-area .menu .nav-item svg {
+  opacity: 0.72;
+}

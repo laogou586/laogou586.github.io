@@ -1,14 +1,14 @@
 :root {
   --width-main: 720px;
-  --fsp: 17px;
+  --fsp: 15px;
   --fsh2: calc(var(--fsp) + 11px);
   --fsh3: calc(var(--fsp) + 7px);
   --fsh4: calc(var(--fsp) + 4px);
   --side-content-width: 224px;
   --gap-margin: 16px;
   --gap-padding: 16px;
-  --gap-p: calc(17px + 4px);
-  --gap-p-compact: calc(17px * 0.75);
+  --gap-p: calc(15px + 4px);
+  --gap-p-compact: calc(15px * 0.75);
 }
 @media screen and (min-width: 2048px) {
   :root {

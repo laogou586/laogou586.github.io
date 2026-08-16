@@ -1,14 +1,14 @@
 :root {
   --width-main: 720px;
-  --fsp: 17px;
+  --fsp: 15px;
   --fsh2: calc(var(--fsp) + 11px);
   --fsh3: calc(var(--fsp) + 7px);
   --fsh4: calc(var(--fsp) + 4px);
   --side-content-width: 224px;
   --gap-margin: 16px;
   --gap-padding: 16px;
-  --gap-p: calc(17px + 4px);
-  --gap-p-compact: calc(17px * 0.75);
+  --gap-p: calc(15px + 4px);
+  --gap-p-compact: calc(15px * 0.75);
 }
 @media screen and (min-width: 2048px) {
   :root {
@@ -37,11 +37,11 @@ pre.mermaid {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: system-ui, "Microsoft Yahei", "Segoe UI", Arial, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
 }
 .mermaid span,
 text {
-  font-family: system-ui, "Microsoft Yahei", "Segoe UI", Arial, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
 }
 .mermaid .edgeLabel {
   padding: 4px;
