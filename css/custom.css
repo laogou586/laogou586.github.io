@@ -1,6 +1,6 @@
 /* ============================================================
    Stellar 全局排版统一 (laogou586)
-   - 基于 15px 正文,统一标题/正文/标注字号层级
+   - 基于 13px 正文,统一标题/正文/标注字号层级
    - 中文阅读优化(行高、字距)
    - 侧栏菜单图标静止时更清晰
    ============================================================ */
@@ -26,28 +26,28 @@
 }
 
 .md-text h1 {
-  font-size: 1.7rem;
+  font-size: 1.5rem; /* 19.5px */
   font-weight: 700;
 }
 
 .md-text h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem; /* 16.9px */
 }
 
 .md-text h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem; /* 15px */
 }
 
 .md-text h4 {
-  font-size: 1.05rem;
+  font-size: 1.05rem; /* 13.7px */
 }
 
 .md-text h5 {
-  font-size: 1rem;
+  font-size: 1rem; /* 13px = 正文 */
 }
 
 .md-text h6 {
-  font-size: 0.875rem;
+  font-size: 0.85rem; /* 11px 小标注 */
   font-weight: 500;
   color: var(--text-p2);
 }
@@ -62,13 +62,13 @@
 /* ---------- 3. 标注 / 图注 / 脚注 ---------- */
 .md-text .caption,
 .md-text figcaption {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-p3);
   text-align: center;
 }
 
 .md-text .footnote {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-p3);
 }
 
@@ -76,4 +76,42 @@
 .nav-area .menu .nav-item img,
 .nav-area .menu .nav-item svg {
   opacity: 0.72;
+}
+
+/* ---------- 5. 页面头部标题:收敛字号 ---------- */
+/* 文章页 / 项目页 / 友链页顶部的 <h1 class="text title">,
+   主题默认 1.5rem 偏大,收敛到 1.2rem,与侧栏头像场景一致 */
+.banner .text-area .title,
+.banner .title {
+  font-size: 1.2rem; /* 15.6px */
+  font-weight: 600;
+}
+
+/* ---------- 6. 首页文章卡片标题:收敛字号 ---------- */
+/* 首页卡片 <article class="md-text"><h2 class="post-title">,
+   覆盖上面 .md-text h2 的 1.3rem,卡片标题略小于正文标题 */
+.post-list .post-card .post-title {
+  font-size: 1.15rem; /* 15px */
+  font-weight: 600;
+}
+
+/* ---------- 7. 侧栏公告 / markdown 卡片:行高协调 ---------- */
+.widget-wrapper.markdown .widget-body {
+  --fsp: 0.8125rem; /* 覆盖 fs14 的 0.875rem,统一 11px */
+  line-height: 1.7; /* 窄栏内更紧凑 */
+  font-size: var(--fsp);
+}
+
+.widget-wrapper.markdown .widget-body p {
+  margin: 0.45em 0;
+}
+
+.widget-wrapper.markdown .widget-body ul {
+  margin: 0.45em 0;
+  padding-left: 1.1em;
+}
+
+.widget-wrapper.markdown .widget-body li {
+  line-height: 1.7;
+  margin: 0.2em 0;
 }
