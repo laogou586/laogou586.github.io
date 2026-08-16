@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.41.0" theme-name="Stellar" theme-version="1.41.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.42.0" theme-name="Stellar" theme-version="1.42.0">
   
   <meta name="robots" content="none">
   <meta name="generator" content="Hexo 8.1.1">
@@ -44,8 +44,8 @@
     
   
 
-  <link rel="preload" href="/css/main.css?v=1.41.0" as="style">
-  <link rel="stylesheet" href="/css/main.css?v=1.41.0">
+  <link rel="preload" href="/css/main.css?v=1.42.0" as="style">
+  <link rel="stylesheet" href="/css/main.css?v=1.42.0">
 
 
   
@@ -114,7 +114,7 @@
 
 
 
-<footer class="page-footer slide-up footnote"><hr><div class="text"><p>© <a href="/">隔壁老王</a> · <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> &#x2F; <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.41.0">Stellar</a></p>
+<footer class="page-footer slide-up footnote"><hr><div class="text"><p>© <a href="/">隔壁老王</a> · <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> &#x2F; <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.42.0">Stellar</a></p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right"></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
@@ -314,7 +314,8 @@
       if (!window.location.search) return;
       if (!new URLSearchParams(window.location.search).has('kw')) return;
       document.addEventListener('DOMContentLoaded', function () {
-        // utils 为全局词法绑定（顶层 const），不能通过 window.utils 访问
+        // utils 由 /js/utils.js 定义（同时暴露 window.utils）；
+        // 未就绪时由 bootstrap 队列兜底，此处按就绪状态判断
         if (typeof utils === 'object' && typeof utils.js === 'function') {
           utils.js('/js/search/highlight.js', { defer: true }).catch(function () {});
         }
@@ -324,13 +325,57 @@
 </script>
 
 
+<script>
+  // 插件注册队列：utils.js 尚未就绪时先缓存注册请求，就绪后统一补跑，
+  // 保证解析期注册的插件不因加载时序丢失。
+  window.stellar = window.stellar || {};
+  window.stellar._pluginQueue = window.stellar._pluginQueue || [];
+  window.stellar.initPlugin = function (fn, name, options) {
+    if (typeof utils === 'object' && typeof utils.initPlugin === 'function') {
+      return utils.initPlugin(fn, name, options);
+    }
+    window.stellar._pluginQueue.push({ fn: fn, name: name, options: options || {} });
+  };
+  window.stellar._flushPlugins = function () {
+    var pending = window.stellar._pluginQueue.splice(0);
+    if (typeof utils !== 'object' || typeof utils.initPlugin !== 'function') return;
+    for (var i = 0; i < pending.length; i++) {
+      try {
+        utils.initPlugin(pending[i].fn, pending[i].name, pending[i].options);
+      } catch (e) {
+        console.error('[Stellar] 插件补注册失败:', e);
+      }
+    }
+  };
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof utils === 'object') return;
+    // utils 未就绪时补载；加载成功后由 utils.js 内部补跑插件队列
+    var s = document.createElement('script');
+    s.src = '/js/utils.js?v=1.42.0';
+    s.async = false;
+    s.onerror = function () {
+      console.error('[Stellar] 无法加载 /js/utils.js，已启用内容兜底显示（sr-fallback）');
+      document.documentElement.classList.add('sr-fallback');
+    };
+    document.head.appendChild(s);
+  });
+</script>
+
+
 <!-- core: utils 必须同步加载（页尾内联插件片段在解析期即调用 utils.initPlugin） -->
-<script src="/js/utils.js?v=1.41.0"></script>
-<script defer src="/js/stellar-icons.js?v=1.41.0"></script>
+<script src="/js/utils.js?v=1.42.0"></script>
+<script>
+  // 解析期检测 utils 是否已就绪；未就绪时同步补载，
+  // 保证「utils 先于页尾插件片段定义」的不变量。
+  if (typeof utils === 'undefined') {
+    document.write('<script src="/js/utils.js?v=1.42.0"><\/script>');
+  }
+</script>
+<script defer src="/js/stellar-icons.js?v=1.42.0"></script>
 <!-- 非首屏图标异步加载：占位符替换依赖构建期生成的 js/icons/{ns}.json -->
-<script defer src="/js/icons.js?v=1.41.0" data-version="1.41.0"></script>
-<script src="/js/main.js?v=1.41.0" defer></script>
-<script defer src="/js/theme.js?v=1.41.0"></script>
+<script defer src="/js/icons.js?v=1.42.0" data-version="1.42.0"></script>
+<script src="/js/main.js?v=1.42.0" defer></script>
+<script defer src="/js/theme.js?v=1.42.0"></script>
 
 
 
@@ -432,7 +477,7 @@
 
 
 
-<script defer src="/js/services.js?v=1.41.0"></script>
+<script defer src="/js/services.js?v=1.42.0"></script>
 
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
@@ -485,7 +530,7 @@
     }
   }
   if (needFancybox) {
-    utils.css(`/css/plugins/fancybox.css?v=1.41.0`);
+    utils.css(`/css/plugins/fancybox.css?v=1.42.0`);
     utils.css(ctx.fancybox.css);
     utils.js(ctx.fancybox.js, { defer: true }).then(function () {
       if (isGlobal) {
@@ -505,10 +550,10 @@
   }
 </script>
 <script>
-  utils.initPlugin(() => {
+  stellar.initPlugin(() => {
     const swiper_api = document.getElementById('swiper-api');
     if (swiper_api != undefined) {
-      utils.css(`/css/plugins/swiper.css?v=1.41.0`);
+      utils.css(`/css/plugins/swiper.css?v=1.42.0`);
       utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
       utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
         const effect = swiper_api.getAttribute('effect') || '';
@@ -532,9 +577,22 @@
   }, 'swiper');
 </script>
 <script>
-  utils.initPlugin(() => {
-    const els = Array.prototype.slice.call(document.querySelectorAll('.slide-up'));
-    if (els.length === 0) return;
+  (function () {
+    // 兜底看门狗独立于插件初始化：3 秒内未完成 reveal 时强制显示 .slide-up 内容
+    let fallbackApplied = false;
+    const revealFallback = () => {
+      if (fallbackApplied) return;
+      fallbackApplied = true;
+      document.documentElement.classList.add('sr-fallback');
+    };
+    const watchdog = setTimeout(() => revealFallback(), 3000);
+
+    stellar.initPlugin(() => {
+      const els = Array.prototype.slice.call(document.querySelectorAll('.slide-up'));
+      if (els.length === 0) {
+        clearTimeout(watchdog);
+        return;
+      }
 
     // 吸顶/固定定位容器内的元素始终在视口内（或由容器控制显隐），
     // 但 ScrollReveal 按文档坐标判断可见性，会误判这类元素为不可见，
@@ -578,15 +636,10 @@
         targets.push(el);
       }
     });
-    if (pinnedGroups.size === 0 && targets.length === 0) return;
-
-    // 加载/初始化失败时兜底显示内容，避免整页空白
-    let fallbackApplied = false;
-    const revealFallback = () => {
-      if (fallbackApplied) return;
-      fallbackApplied = true;
-      document.documentElement.classList.add('sr-fallback');
-    };
+    if (pinnedGroups.size === 0 && targets.length === 0) {
+      clearTimeout(watchdog);
+      return;
+    }
 
     const slideUp = {
       distance: `8px`,
@@ -596,9 +649,6 @@
       opacity: 0,
       easing: "ease-out"
     };
-
-    // 看门狗：CDN 长时间无响应时强制显示内容
-    const watchdog = setTimeout(() => revealFallback(), 3000);
 
     utils.js(`https://gcore.jsdelivr.net/npm/scrollreveal@4.0/dist/scrollreveal.min.js`, { defer: true })
       .then(() => {
@@ -625,10 +675,11 @@
         console.error('[Plugin scrollreveal] 加载失败:', err);
         revealFallback();
       });
-  }, 'scrollreveal');
+    }, 'scrollreveal');
+  })();
 </script>
 <script>
-  utils.initPlugin(() => {
+  stellar.initPlugin(() => {
     const codeElements = document.querySelectorAll('.code');
     if (codeElements.length > 0) {
       ctx.copycode = {
@@ -644,6 +695,18 @@
     }
   }, 'copycode');
 </script>
+<script>
+  stellar.initPlugin(() => {
+    const els = Array.prototype.slice.call(document.querySelectorAll('[data-text-adaptive]'));
+    if (els.length === 0) return;
+    utils.js('/js/color.js').then(() => utils.js('/js/plugins/adaptive-text.js')).then(() => {
+      if (typeof applyAdaptiveText === 'function') {
+        applyAdaptiveText(els);
+      }
+    });
+  }, 'adaptive-text');
+</script>
+
 
 
 <!-- inject -->
