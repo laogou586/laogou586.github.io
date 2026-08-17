@@ -115,3 +115,12 @@
   line-height: 1.7;
   margin: 0.2em 0;
 }
+
+/* ---------- 8. 侧栏 Logo 副标题:斜体 + 与"最近更新"标题同色调 ---------- */
+/* 色调对齐 .widgets .widget-header >span: var(--text-p1) + opacity 0.3 */
+.logo-wrap .sub {
+  font-style: italic;
+  color: var(--text-p1);
+  opacity: 0.3;
+}
+

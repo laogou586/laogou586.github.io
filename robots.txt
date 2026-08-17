@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://web-love.204680.xyz/sitemap.xml
