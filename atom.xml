@@ -8,9 +8,9 @@
   <link href="https://web-love.204680.xyz/" rel="alternate"/>
   <link href="https://web-love.204680.xyz/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, 隔壁老王</rights>
-  <subtitle>love~test</subtitle>
+  <subtitle>lovestayle</subtitle>
   <title>Laowang</title>
-  <updated>2026-08-17T16:43:37.263Z</updated>
+  <updated>2026-08-17T16:49:12.234Z</updated>
   <entry>
     <author>
       <name>隔壁老王</name>
@@ -25,7 +25,7 @@
       <![CDATA[<h1 id="📱💻-scrcpy-无线投屏-·-安装与使用全攻略"><a href="#📱💻-scrcpy-无线投屏-·-安装与使用全攻略" class="headerlink" title="📱💻 scrcpy 无线投屏 · 安装与使用全攻略"></a>📱💻]]>
     </summary>
     <title>📱💻 scrcpy 无线投屏 · 安装与使用全攻略</title>
-    <updated>2026-08-17T16:43:37.263Z</updated>
+    <updated>2026-08-17T16:49:12.234Z</updated>
   </entry>
   <entry>
     <author>
@@ -35,7 +35,7 @@
     <category term="测试" scheme="https://web-love.204680.xyz/tags/%E6%B5%8B%E8%AF%95/"/>
     <category term="Hexo" scheme="https://web-love.204680.xyz/tags/Hexo/"/>
     <content>
-      <![CDATA[<p>你好，世界！这是隔壁老王使用 Hexo + Stellar 主题发布的第一篇测试文章。</p><h3 id="搞机与折腾"><a href="#搞机与折腾" class="headerlink" title="搞机与折腾"></a>搞机与折腾</h3><p>今天终于把博客的配置问题解决了，去掉了导致报错的中文路径，现在一切运行正常。</p><span id="more"></span><h4 id="接下来要做的："><a href="#接下来要做的：" class="headerlink" title="接下来要做的："></a>接下来要做的：</h4><ol><li>丰富博客内容</li><li>上传好看的头像和网站图标</li><li>探索 Stellar 主题的更多高级玩法</li></ol><p>这是一张测试图片的代码示例（如果想加图片可以把图片放在相对路径下）：<br><img src="/images/avatar.png" alt="测试图片"></p>]]>
+      <![CDATA[<p>你好，世界！这是隔壁老王使用 Hexo + Stellar 主题发布的第一篇测试文章。</p><h3 id="搞机与折腾"><a href="#搞机与折腾" class="headerlink" title="搞机与折腾"></a>搞机与折腾</h3><p>今天终于把博客的配置问题解决了，去掉了导致报错的中文路径，现在一切运行正常。</p><span id="more"></span><h4 id="接下来要做的："><a href="#接下来要做的：" class="headerlink" title="接下来要做的："></a>接下来要做的：</h4><ol><li>丰富博客内容</li><li>上传好看的头像和网站图标</li><li>探索 Stellar 主题的更多高级玩法</li></ol><p>这是一张测试图片的代码示例（如果想加图片可以把图片放在相对路径下）：<br><img src="/images/hello.svg" alt="测试图片"></p>]]>
     </content>
     <id>https://web-love.204680.xyz/2025/01/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</id>
     <link href="https://web-love.204680.xyz/2025/01/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
@@ -45,6 +45,6 @@
 <h3 id="搞机与折腾"><a href="#搞机与折腾" class="headerlink" title="搞机与折腾"></a>搞机与折腾</h3><p>今天终于把博客的配置问题解决了，去掉了导致报错的中文路径，现在一切运行正常。</p>]]>
     </summary>
     <title>我的第一篇测试文章</title>
-    <updated>2026-08-17T16:43:37.263Z</updated>
+    <updated>2026-08-17T16:49:12.235Z</updated>
   </entry>
 </feed>
