@@ -124,3 +124,91 @@
   opacity: 0.3;
 }
 
+/* ---------- 9. CSS Color 4 兼容层(修复部分浏览器左侧白屏/色彩错乱) ---------- */
+/* 根因: 主题 main.css 使用空格分隔 hsla(210deg 10% 24% / 1) 与 color-mix() 等
+   CSS Color Level 4 新语法, 旧版浏览器(Chrome<111 / Safari<12.1 /
+   Edge 旧版 / 部分 Android WebView、微信内置浏览器)解析失败,
+   导致 --card/--background/--text-* 等变量失效, 深色模式回退为白色卡片。
+   以下用传统逗号语法重写等价变量, 色值完全相同, 新旧浏览器观感一致。 */
+@supports not (color: hsla(0 0% 0% / 1)) {
+  :root,
+  :root[data-theme="light"] {
+    --theme: hsla(var(--hue), var(--sat), var(--light), 1);
+    --theme-a10: hsla(var(--hue), var(--sat), var(--light), 0.1);
+    --theme-a20: hsla(var(--hue), var(--sat), var(--light), 0.2);
+    --theme-a30: hsla(var(--hue), var(--sat), var(--light), 0.3);
+    --link: hsla(207, 90%, 54%, 1);
+    --link-a20: hsla(207, 90%, 54%, 0.2);
+    --background: hsla(210, 20%, 98%, 1);
+    --card: #fff;
+    --bg-a20: hsla(210, 0%, 100%, 0.2);
+    --bg-a50: hsla(210, 0%, 100%, 0.5);
+    --bg-a60: hsla(210, 0%, 100%, 0.6);
+    --bg-a75: hsla(210, 0%, 100%, 0.75);
+    --bg-a100: hsla(210, 0%, 100%, 1);
+    --text: hsla(210, 0%, 0%, 1);
+    --text-reverse: hsla(210, 0%, 100%, 1);
+    --text-p1: hsla(210, 0%, 0%, 0.8);
+    --text-p2: hsla(210, 0%, 0%, 0.7);
+    --text-p3: hsla(210, 0%, 0%, 0.5);
+    --text-p4: hsla(210, 0%, 0%, 0.4);
+    --text-meta: hsla(210, 0%, 0%, 0.2);
+    --text-code: hsla(210, 0%, 0%, 0.9);
+    --text-a10: hsla(210, 0%, 0%, 0.1);
+    --text-a20: hsla(210, 0%, 0%, 0.2);
+    --block: hsla(210, 50%, 12%, 0.04);
+    --block-border: hsla(210, 50%, 12%, 0.06);
+  }
+  :root[data-theme="dark"] {
+    --background: hsla(210, 8%, 12%, 1);
+    --card: hsla(210, 10%, 24%, 1);
+    --bg-a20: hsla(210, 0%, 0%, 0.2);
+    --bg-a50: hsla(210, 0%, 0%, 0.5);
+    --bg-a60: hsla(210, 0%, 0%, 0.6);
+    --bg-a75: hsla(210, 0%, 0%, 0.75);
+    --bg-a100: hsla(210, 0%, 0%, 1);
+    --text: hsla(210, 0%, 100%, 1);
+    --text-reverse: hsla(210, 0%, 0%, 1);
+    --text-p1: hsla(210, 0%, 100%, 0.8);
+    --text-p2: hsla(210, 0%, 100%, 0.7);
+    --text-p3: hsla(210, 0%, 100%, 0.5);
+    --text-p4: hsla(210, 0%, 100%, 0.4);
+    --text-meta: hsla(210, 0%, 100%, 0.2);
+    --text-code: hsla(210, 0%, 100%, 0.9);
+    --text-a10: hsla(210, 0%, 100%, 0.1);
+    --text-a20: hsla(210, 0%, 100%, 0.2);
+    --block: hsla(210, 24%, 72%, 0.08);
+    --block-border: hsla(210, 24%, 72%, 0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --background: hsla(210, 8%, 12%, 1);
+      --card: hsla(210, 10%, 24%, 1);
+      --bg-a20: hsla(210, 0%, 0%, 0.2);
+      --bg-a50: hsla(210, 0%, 0%, 0.5);
+      --bg-a60: hsla(210, 0%, 0%, 0.6);
+      --bg-a75: hsla(210, 0%, 0%, 0.75);
+      --bg-a100: hsla(210, 0%, 0%, 1);
+      --text: hsla(210, 0%, 100%, 1);
+      --text-reverse: hsla(210, 0%, 0%, 1);
+      --text-p1: hsla(210, 0%, 100%, 0.8);
+      --text-p2: hsla(210, 0%, 100%, 0.7);
+      --text-p3: hsla(210, 0%, 100%, 0.5);
+      --text-p4: hsla(210, 0%, 100%, 0.4);
+      --text-meta: hsla(210, 0%, 100%, 0.2);
+      --text-code: hsla(210, 0%, 100%, 0.9);
+      --text-a10: hsla(210, 0%, 100%, 0.1);
+      --text-a20: hsla(210, 0%, 100%, 0.2);
+      --block: hsla(210, 24%, 72%, 0.08);
+      --block-border: hsla(210, 24%, 72%, 0.12);
+    }
+  }
+}
+
+/* color-mix() 兼容: 不支持的浏览器让菜单高亮直接使用主题色 */
+@supports not (color: color-mix(in srgb, red, white)) {
+  :root {
+    --item-theme-light: var(--item-theme);
+  }
+}
+
