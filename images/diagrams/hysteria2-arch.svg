@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="0.55" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(255,255,255,.16)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,.08)"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="rgba(255,255,255,.85)"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <circle cx="150" cy="120" r="160" fill="rgba(255,255,255,.07)"/>
+  <circle cx="1070" cy="520" r="190" fill="rgba(255,255,255,.05)"/>
+
+  <text x="600" y="70" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="30" font-weight="700" fill="#fff">Hysteria 2 节点数据链路架构</text>
+  <text x="600" y="102" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16" fill="rgba(255,255,255,.75)">纯 IPv6 VPS · WARP 打通 IPv4 出口 · 客户端固定证书</text>
+
+  <g font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <!-- 节点 1：客户端 -->
+    <g>
+      <rect x="60" y="240" width="220" height="150" rx="20" fill="url(#card)" stroke="rgba(255,255,255,.65)" stroke-width="2.5"/>
+      <circle cx="170" cy="290" r="26" fill="rgba(255,255,255,.22)"/>
+      <circle cx="170" cy="290" r="12" fill="#fff"/>
+      <text x="170" y="350" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">客户端设备</text>
+      <text x="170" y="374" text-anchor="middle" font-size="14" fill="rgba(255,255,255,.78)">电脑 / 手机 · v2rayN + sing-box</text>
+    </g>
+
+    <!-- 节点 2：域名 -->
+    <g>
+      <rect x="350" y="220" width="240" height="190" rx="20" fill="url(#card)" stroke="rgba(255,255,255,.65)" stroke-width="2.5"/>
+      <circle cx="470" cy="272" r="26" fill="rgba(255,255,255,.22)"/>
+      <path d="M462 272 a8 8 0 0 0 16 0" fill="none" stroke="#fff" stroke-width="3"/>
+      <circle cx="470" cy="272" r="5" fill="#fff"/>
+      <text x="470" y="334" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">域名解析</text>
+      <text x="470" y="358" text-anchor="middle" font-size="14" fill="rgba(255,255,255,.78)">yourname.ddns.org</text>
+      <text x="470" y="380" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.6)">AAAA → VPS 公网 IPv6</text>
+    </g>
+
+    <!-- 节点 3：VPS -->
+    <g>
+      <rect x="660" y="220" width="240" height="190" rx="20" fill="url(#card)" stroke="rgba(255,255,255,.65)" stroke-width="2.5"/>
+      <rect x="700" y="262" width="62" height="46" rx="6" fill="rgba(255,255,255,.25)" stroke="#fff" stroke-width="3"/>
+      <line x1="708" y1="282" x2="754" y2="282" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <line x1="708" y1="294" x2="744" y2="294" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <text x="780" y="338" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">IPv6 VPS</text>
+      <text x="780" y="362" text-anchor="middle" font-size="14" fill="rgba(255,255,255,.78)">Hysteria 2 · UDP 8443</text>
+      <text x="780" y="384" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.6)">仅公网 IPv6</text>
+    </g>
+
+    <!-- 节点 4：互联网 -->
+    <g>
+      <rect x="960" y="240" width="180" height="150" rx="20" fill="url(#card)" stroke="rgba(255,255,255,.65)" stroke-width="2.5"/>
+      <circle cx="1050" cy="290" r="24" fill="rgba(255,255,255,.2)"/>
+      <g stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M1034 296 a22 22 0 0 1 32 0"/>
+        <path d="M1028 302 a32 32 0 0 1 44 0"/>
+      </g>
+      <text x="1050" y="350" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">IPv4 互联网</text>
+      <text x="1050" y="374" text-anchor="middle" font-size="14" fill="rgba(255,255,255,.78)">GitHub · 各类网站</text>
+    </g>
+
+    <!-- 连线 -->
+    <g stroke="rgba(255,255,255,.85)" stroke-width="3.5" fill="none">
+      <path d="M280 300 q45 -10 70 0" marker-end="url(#arrow)"/>
+      <path d="M590 300 q45 -10 70 0" marker-end="url(#arrow)"/>
+      <path d="M900 300 q40 -8 60 0" marker-end="url(#arrow)"/>
+    </g>
+
+    <g font-size="14" fill="rgba(255,255,255,.92)" font-weight="600">
+      <text x="315" y="282" text-anchor="middle">UDP/QUIC · SNI</text>
+      <text x="625" y="282" text-anchor="middle">IPv6 直达</text>
+      <text x="930" y="282" text-anchor="middle">WARP 隧道</text>
+    </g>
+    <g font-size="12.5" fill="rgba(255,255,255,.6)">
+      <text x="315" y="302" text-anchor="middle">证书校验</text>
+      <text x="625" y="302" text-anchor="middle">端口 8443</text>
+      <text x="930" y="302" text-anchor="middle">IPv4 出口</text>
+    </g>
+  </g>
+</svg>
