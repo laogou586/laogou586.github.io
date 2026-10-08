@@ -20,15 +20,6 @@
   </url>
   
   <url>
-    <loc>https://web-love.204680.xyz/2026/08/27/Hysteria2-%E7%BA%AFIPv6-VPS-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2026-10-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://web-love.204680.xyz/2026/08/28/v2rayN-%E5%AE%8C%E6%95%B4%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/</loc>
     
     <lastmod>2026-10-08</lastmod>
@@ -38,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://web-love.204680.xyz/categories/</loc>
+    <loc>https://web-love.204680.xyz/about/</loc>
     
     <lastmod>2026-10-08</lastmod>
     
@@ -47,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://web-love.204680.xyz/about/</loc>
+    <loc>https://web-love.204680.xyz/categories/</loc>
     
     <lastmod>2026-10-08</lastmod>
     
@@ -66,6 +57,15 @@
   
   <url>
     <loc>https://web-love.204680.xyz/friends/</loc>
+    
+    <lastmod>2026-10-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://web-love.204680.xyz/2026/08/27/Hysteria2-%E7%BA%AFIPv6-VPS-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2026-10-08</lastmod>
     
