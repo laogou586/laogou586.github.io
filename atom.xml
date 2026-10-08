@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, 隔壁老王</rights>
   <subtitle>lovestayle</subtitle>
   <title>Laowang</title>
-  <updated>2026-08-28T13:24:08.000Z</updated>
+  <updated>2026-10-08T08:32:54.753Z</updated>
   <entry>
     <author>
       <name>隔壁老王</name>
@@ -29,7 +29,7 @@
     <published>2026-08-28T10:30:00.000Z</published>
     <summary>v2rayN 完整优化指南：恢复出厂设置（重置）、路由分流（白名单/IPIfNonMatch/嗅探quic）、DNS 防污染（阿里DoH + Cloudflare DoH）、远程解析 IPv4 优先、Hysteria2 带宽等参数调优、TUN 模式与常见故障排错，附 TL;DR 速查。</summary>
     <title>v2rayN 完整优化指南：重置 · 分流 · DNS · 参数 全攻略</title>
-    <updated>2026-08-28T13:24:08.000Z</updated>
+    <updated>2026-10-08T08:32:54.753Z</updated>
   </entry>
   <entry>
     <author>
@@ -49,7 +49,7 @@
     <published>2026-08-27T09:06:00.000Z</published>
     <summary>面向纯 IPv6 VPS 的 Hysteria 2 搭建全流程：先装 Cloudflare WARP 打通 IPv4 出口，再安装 Hysteria 2、生成带 SAN 的自签证书、客户端固定证书零警告接入，附隐私脱敏示例值。</summary>
     <title>纯 IPv6 VPS 搭建 Hysteria 2 节点：从零到稳定运行的完整教程</title>
-    <updated>2026-08-27T11:42:18.000Z</updated>
+    <updated>2026-10-08T08:32:54.753Z</updated>
   </entry>
   <entry>
     <author>
